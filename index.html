@@ -57,19 +57,29 @@
 			//메뉴에 더보기 버튼/접기 버튼을 클릭
 			$('.more-btn').click(function(e){
 				e.preventDefault();
-				$('.menu-service-box').toggle();
+				$('.menu-service-box.box1').toggle();
 				if(!$(this).hasClass('fold')){
 					$(this).text('접기');
 				}else{
 					$(this).text('더보기');
+					foldBtn();
 				}
 				$(this).toggleClass('fold');
+			})
+			$('.menu-set-btn').click(function(e){
+				e.preventDefault();
+				$('.menu-service-box.box2').show();
+				$('.menu-service-box.box1').hide();
 			})
 		});
 		function getPage(page,min,max){
 			if(page < min)	return max;
 			if(page > max)	return min;
 			return page;
+		}
+		function foldBtn(){
+			$('.menu-service-box.box1').hide();
+			$('.menu-service-box.box2').hide();
 		}
 	</script>
 </head>
@@ -179,7 +189,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="menu-service-box">
+		<div class="menu-service-box box1">
 			<div class="container">
 				<div class="group-serivce-box after">
 					<div class="list-service">
@@ -256,6 +266,181 @@
 				<div class="btn-box">
 					<a href="#" class="service-btn">서비스 전체보기</a>
 					<a href="#" class="menu-set-btn">메뉴설정</a>
+				</div>
+			</div>
+		</div>
+		<div class="menu-service-box box2">
+			<div class="container">
+				<div class="group-serivce-box after">
+					<div class="list-service">
+						<div class="service-title bold">ㄱ-ㅁ</div>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>날씨
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>네이버 MY CAR
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>네이버 게임
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>네이버 예약
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>네이버플러스
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>뉴스
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>데이터랩
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>메모
+						</label>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅂ-ㅅ</div>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>밴드
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>부동산
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>북마크
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>소프트웨어
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>스포츠
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>시리즈
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>시리즈온
+						</label>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅇ</div>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>영화
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>오디오클립
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>오피스
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>웨일
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>웹소설
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>웹툰
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>인플루언서 검색
+						</label>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅈ-ㅊ</div>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>자동차
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>주소록
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>증권
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>지도
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>지식백과
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>책
+						</label>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅋ-ㅎ</div>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>캘린더
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>클로바 더빙
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>파파고
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>포스트
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>학술정보
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>항공권
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>호텔
+						</label>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">A-Z</div>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>Keep
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>modoo!
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>MYBOX
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>MY구독
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>TV연예
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>VIBE
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>V LIVE
+						</label>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">사전</div>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>사전
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>국어사전
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>영어/영영사전
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>일본어 사전
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>중국어 사전
+						</label>
+						<label class="service-data">
+							<input type="checkbox" value=""><i class="check-ico"></i>한자 사전
+						</label>
+					</div>
+				</div>
+				<div class="btn-box">
+					<a href="#" class="init-btn">초기화</a>
+					<a href="#" class="save-btn">저장</a>
 				</div>
 			</div>
 		</div>

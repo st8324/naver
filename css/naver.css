@@ -1478,7 +1478,11 @@ ul,ol{
 	left: 0;
 	right: 0;
 	box-shadow: 0 4px 4px 0 rgba(0,0,0,.12);
+	display: none;
 	/* display: none; */
+}
+.menu .menu-service-box.box2{
+	display: none;
 }
 .menu .menu-service-box .list-service{
 	width: 161px;
@@ -1529,9 +1533,12 @@ ul,ol{
 	right: 30px;
 	top: -41px;
 	font-size: 12px;
+	text-align: right;
 }
 .menu .btn-box .service-btn,
-.menu .btn-box .menu-set-btn{
+.menu .btn-box .menu-set-btn,
+.menu .btn-box .init-btn,
+.menu .btn-box .save-btn{
 	display: inline-block;
 	padding: 7px 13px 5px;
 	margin-left: 3px;
@@ -1552,6 +1559,54 @@ ul,ol{
 	background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
 	background-size: 440px 410px;
 	background-position: -293px -308px;
+}
+.menu .btn-box .init-btn::before{
+	display: inline-block;
+	content: '';
+	width: 10px;
+	height: 13px;
+	vertical-align: top;
+	margin: 2px 5px 0 0;
+	background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+	background-size: 440px 410px;
+	background-position: -408px -71px;
+	margin-right: 6px;
+}
+.menu .btn-box .save-btn{
+	background-color: #19ce60;
+	border-color: #00c73c;
+	color: #fff;
+}
+.menu .btn-box a:hover{
+	text-decoration: underline;
+}
+.menu .menu-service-box.box2 .service-data{
+	position: relative;
+	display: block;
+}
+.menu .menu-service-box.box2 .service-data input[type=checkbox]{
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	opacity: 0;
+}
+.menu .menu-service-box.box2 .service-data input[type=checkbox]:focus{
+	opacity: 1;
+}
+.menu .menu-service-box.box2 .service-data .check-ico{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 4px 9px 0 0;
+	vertical-align: top;
+	background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+	background-size: 440px 410px;
+	background-position: -420px -212px;
+}
+.menu .menu-service-box.box2 .service-data input[type=checkbox]:checked+.check-ico{
+	background-position: -420px -230px;
 }
 .theme-cont-box .top-box{
 	padding: 22px 0 18px;
