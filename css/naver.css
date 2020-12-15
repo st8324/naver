@@ -434,7 +434,6 @@ ul,ol{
 	line-height: 16px;
 	padding: 7px 8px 5px;
 	border: 1px solid #dae1e6;
-	/* border: 1px solid red; */
 	background-color: #fff;
 	color: #505050;
 }
@@ -518,7 +517,6 @@ ul,ol{
 	overflow: hidden;
 	/* height: 1492px; */
 	border : 1px solid #e4e8eb;
-	border : 1px solid red;
 }
 .shop-box .shop-list .shop-list-header{
 	overflow: hidden;
@@ -691,7 +689,6 @@ ul,ol{
 	padding: 13px 0 17px;
 	margin: 0 8px;
 	border-top: 1px solid #e4e8eb;
-	border-top: 1px solid red;
 }
 .shop-box .shop-list-middle .list-middle-header{
 	padding: 0 8px;
@@ -737,7 +734,6 @@ ul,ol{
 	padding-bottom: 30px;
 	margin: 0 8px;
 	border-top: 1px solid #e4e8eb;
-	border-top: 1px solid red;
 }
 .shop-box .shop-list-footer .shop-footer-head{
 	padding: 14px 0 12px;
@@ -840,7 +836,6 @@ ul,ol{
 	content: '';
 	display: inline-block;
 	background-color: #e4e8eb;
-	background-color: red;
 	margin-left: 5px;
 	vertical-align: -1px;
 }
@@ -1607,6 +1602,22 @@ ul,ol{
 }
 .menu .menu-service-box.box2 .service-data input[type=checkbox]:checked+.check-ico{
 	background-position: -420px -230px;
+}
+.menu .empty-box{
+	float: left;
+	padding: 11px 0;
+	display: none;
+}
+.menu .empty-box .empty-menu{
+	width: 68px;
+	height: 28px;
+	border: 1px solid #dae1e6;
+	border-radius: 2px;
+	background-color: #f7f9fa;
+	float: left;
+}
+.menu .empty-box .empty-menu+.empty-menu{
+	margin-left: 8px;
 }
 .theme-cont-box .top-box{
 	padding: 22px 0 18px;

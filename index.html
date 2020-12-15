@@ -66,10 +66,13 @@
 				}
 				$(this).toggleClass('fold');
 			})
+			//메뉴설정 버튼 클릭
 			$('.menu-set-btn').click(function(e){
 				e.preventDefault();
 				$('.menu-service-box.box2').show();
 				$('.menu-service-box.box1').hide();
+				$('.black-menu-box').hide();
+				$('.empty-box').show();
 			})
 		});
 		function getPage(page,min,max){
@@ -80,6 +83,8 @@
 		function foldBtn(){
 			$('.menu-service-box.box1').hide();
 			$('.menu-service-box.box2').hide();
+			$('.empty-box').hide();
+			$('.black-menu-box').show();
 		}
 	</script>
 </head>
@@ -180,6 +185,13 @@
 				<li class="black-menu">
 					<a href="#" class="link">웹툰</a>
 				</li>
+			</ul>
+			<ul class="empty-box">
+				<li class="empty-menu"></li>
+				<li class="empty-menu"></li>
+				<li class="empty-menu"></li>
+				<li class="empty-menu"></li>
+				<li class="empty-menu"></li>
 			</ul>
 			<a href="#" class="more-btn">더보기</a>
 			<div class="filt-box">
