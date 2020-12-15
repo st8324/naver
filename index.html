@@ -55,8 +55,9 @@
 					.text(currentPage);
 			})
 			//메뉴에 더보기 버튼/접기 버튼을 클릭
-			$('.more-btn').click(function(){
-				$('.memu-service-box').toggle();
+			$('.more-btn').click(function(e){
+				e.preventDefault();
+				$('.menu-service-box').toggle();
 				if(!$(this).hasClass('fold')){
 					$(this).text('접기');
 				}else{
@@ -76,7 +77,7 @@
 	<div class="header">
 		<div class="container">
 			<img class="logo-img" width="415" height="160" src="https://s.pstatic.net/static/www/mobile/edit/2020/1202/mobile_10322693172.png" alt="">
-			<a href="#" class="naver-logo"></a>
+			<a href="https://naver.com" class="naver-logo"></a>
 			<form action="" class="search-box">
 				<div class="search-left">
 					<input type="text" class="search-in">
@@ -101,12 +102,12 @@
 				</div>
 			</form>
 			<div class="service-box">
-				<a href="#" class="set-home-btn">네이버를 시작페이지로</a>
+				<a href="https://help.naver.com/support/welcomePage/guide.help" class="set-home-btn">네이버를 시작페이지로</a>
 				<i class="bar"></i>
-				<a href="#" class="jrnaver-link">
+				<a href="https://jr.naver.com" class="jrnaver-link">
 					<i class="jrnaver-ico"></i>
 				</a>
-				<a href="#" class="hb-link">
+				<a href="https://happybean.naver.com" class="hb-link">
 					<i class="hb-ico"></i>
 				</a>
 			</div>
@@ -116,27 +117,27 @@
 		<div class="container">
 			<ul class="green-menu-box after">
 				<li class="green-menu">
-					<a href="#" class="link mail">
+					<a href="https://mail.naver.com/" class="link mail">
 						<i class="mail-ico"></i>메일
 					</a>
 				</li>
 				<li class="green-menu">
-					<a href="#" class="link mail">카페</a>
+					<a href="https://section.cafe.naver.com/" class="link mail">카페</a>
 				</li>
 				<li class="green-menu">
-					<a href="#" class="link mail">블로그</a>
+					<a href="https://section.blog.naver.com/" class="link mail">블로그</a>
 				</li>
 				<li class="green-menu">
-					<a href="#" class="link mail">지식iN</a>
+					<a href="https://kin.naver.com/" class="link mail">지식iN</a>
 				</li>
 				<li class="green-menu">
-					<a href="#" class="link mail">쇼핑</a>
+					<a href="https://shopping.naver.com/" class="link mail">쇼핑</a>
 				</li>
 				<li class="green-menu">
-					<a href="#" class="link mail">Pay</a>
+					<a href="https://order.pay.naver.com/home" class="link mail">Pay</a>
 				</li>
 				<li class="green-menu">
-					<a href="#" class="link mail">
+					<a href="https://tv.naver.com/" class="link mail">
 						<i class="tv-ico"></i>TV
 					</a>
 				</li>
@@ -178,7 +179,86 @@
 				</a>
 			</div>
 		</div>
-		<div class="memu-service-box"></div>
+		<div class="menu-service-box">
+			<div class="container">
+				<div class="group-serivce-box after">
+					<div class="list-service">
+						<div class="service-title bold">ㄱ-ㅁ</div>
+						<div class="service-data"><a href="#">날씨</a></div>
+						<div class="service-data"><a href="#">네이버 MY CAR</a></div>
+						<div class="service-data"><a href="#">네이버 게임</a></div>
+						<div class="service-data"><a href="#">네이버 예약</a></div>
+						<div class="service-data"><a href="#">네이버플러스 멤버쉽</a></div>
+						<div class="service-data"><a href="#">뉴스</a></div>
+						<div class="service-data"><a href="#">데이터랩</a></div>
+						<div class="service-data"><a href="#">메모</a></div>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅂ-ㅅ</div>
+						<div class="service-data"><a href="#">밴드</a></div>
+						<div class="service-data"><a href="#">부동산</a></div>
+						<div class="service-data"><a href="#">북마크</a></div>
+						<div class="service-data"><a href="#">소프트웨어</a></div>
+						<div class="service-data"><a href="#">스포츠</a></div>
+						<div class="service-data"><a href="#">시리즈</a></div>
+						<div class="service-data"><a href="#">시리즈온</a></div>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅇ</div>
+						<div class="service-data"><a href="#">영화</a></div>
+						<div class="service-data"><a href="#">오디오클립</a></div>
+						<div class="service-data"><a href="#">오피스</a></div>
+						<div class="service-data"><a href="#">웨일</a></div>
+						<div class="service-data"><a href="#">웹소설</a></div>
+						<div class="service-data"><a href="#">웹툰</a></div>
+						<div class="service-data"><a href="#">인플루언서 검색</a></div>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅈ-ㅊ</div>
+						<div class="service-data"><a href="#">자동차</a></div>
+						<div class="service-data"><a href="#">주소록</a></div>
+						<div class="service-data"><a href="#">증권</a></div>
+						<div class="service-data"><a href="#">지도</a></div>
+						<div class="service-data"><a href="#">지식백과</a></div>
+						<div class="service-data"><a href="#">책</a></div>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">ㅋ-ㅎ</div>
+						<div class="service-data"><a href="#">캘린더</a></div>
+						<div class="service-data"><a href="#">클로바더빙</a></div>
+						<div class="service-data"><a href="#">파파고</a></div>
+						<div class="service-data"><a href="#">포스트</a></div>
+						<div class="service-data"><a href="#">학술정보</a></div>
+						<div class="service-data"><a href="#">항공권</a></div>
+						<div class="service-data"><a href="#">호텔</a></div>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">A-Z</div>
+						<div class="service-data"><a href="#">Keep</a></div>
+						<div class="service-data"><a href="#">modoo!</a></div>
+						<div class="service-data"><a href="#">MYBOX</a></div>
+						<div class="service-data"><a href="#">MY구독</a></div>
+						<div class="service-data"><a href="#">TV연예</a></div>
+						<div class="service-data"><a href="#">VIBE</a></div>
+						<div class="service-data"><a href="#">V LIVE</a></div>
+					</div>
+					<div class="list-service">
+						<div class="service-title bold">사전</div>
+						<div class="service-data"><a href="#">사전</a></div>
+						<div class="service-data"><a href="#">국어사전</a></div>
+						<div class="service-data"><a href="#">영어/영영사전</a></div>
+						<div class="service-data"><a href="#">일본어사전</a></div>
+						<div class="service-data"><a href="#">중국어사전</a></div>
+						<div class="service-data"><a href="#">한자사전</a></div>
+						<div class="service-data"><a href="#" class="more-dic">사전 더보기</a></div>
+					</div>
+				</div>
+				<div class="btn-box">
+					<a href="#" class="service-btn">서비스 전체보기</a>
+					<a href="#" class="menu-set-btn">메뉴설정</a>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="contents">
 		<div class="container after">
