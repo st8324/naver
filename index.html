@@ -61,15 +61,9 @@
 				//더보기 버튼 클릭
 				if(!$(this).hasClass('fold')){
 					$(this).text('접기');
+					tmpMenuArr = selectedMenuArr.slice(0);
 					setEmptyMenu(selectedMenuArr);
-					$('.service-data input').each(function(){
-						var text = $(this).parent().text().trim();
-						if(selectedMenuArr.indexOf(text) != -1){
-							$(this).prop('checked',true);
-						}else{
-							$(this).prop('checked',false);
-						}
-					})
+					setMenuCheckbox(selectedMenuArr);
 				}
 				//접기 버튼 클릭
 				else{
@@ -92,15 +86,46 @@
 				/* 선택된 메뉴가 배열에 있으면 배열에서 제거, 없으면 추가 */
 				var index = tmpMenuArr.indexOf(text);
 				if( index == -1){
-					tmpMenuArr.push(text);
-					$('.empty-menu.focus').text(text);
-					$('.empty-menu.focus').addClass('selected');
-					$('.empty-menu.focus').removeClass('focus');
-					$('.empty-menu.selected').last().next().addClass('focus');
+					if(tmpMenuArr.length != 5){
+						tmpMenuArr.push(text);
+						$('.empty-menu.focus').text(text);
+						$('.empty-menu.focus').addClass('selected');
+						$('.empty-menu.focus').removeClass('focus');
+						$('.empty-menu.selected').last().next().addClass('focus');
+					}else{
+						alert('최대 5개까지 설정할 수 있습니다');
+						$(this).prop('checked',false);
+					}
 				}else{
 					tmpMenuArr.splice(index,1);
 					setEmptyMenu(tmpMenuArr);
 				}
+			})
+			//저장 버튼 클릭
+			$('.btn-box .save-btn').click(function(e){
+				e.preventDefault();
+				//tmpMenuArr=>selectedMenuArr에 저장
+				selectedMenuArr = tmpMenuArr.splice(0);
+				if(selectedMenuArr.length == 0){
+					alert('선택된 메뉴가 없습니다. 초기설정으로 돌아갑니다.');
+				}
+				//selectedMenuArr에 있는 내용을 토대로 black-menu-box를 수정
+				$('.more-btn').click();
+				setBlackMenu(selectedMenuArr, baseMenuArr);
+			})
+			//초기화 버튼 클릭
+			$('.btn-box .init-btn').click(function(e){
+				e.preventDefault();
+				alert('초기설정으로 돌아갑니다.');
+				selectedMenuArr = [];
+				$('.more-btn').click();
+				setBlackMenu(selectedMenuArr,baseMenuArr);
+			})
+			$('.filt-box').click(function(){
+				$('.filt-search-box').show();
+			})
+			$('.filt-search-box .close-btn').click(function(){
+				$('.filt-search-box').hide();
 			})
 		});
 		//메뉴설정에서 메뉴들을 선택하고 저장했을 때 최종 결정된 메뉴
@@ -108,11 +133,44 @@
 		//메뉴설정에서 메뉴들을 선택했을 때 저장된 메뉴
 		var tmpMenuArr = [];
 		const baseMenuArr = ['사전','뉴스','증권','부동산','영화','VIBE','책','웹툰'];
-		
+		const menuLink = {
+			'사전' : 'https://dict.naver.com/',
+			'뉴스' : 'https://news.naver.com/',
+			'증권' : 'https://finance.naver.com/',
+			'부동산': '#1',
+			'영화' : '#2',
+			'VIBE' : '#3',
+			'책'   : '#4',
+			'웹툰' : '#5'
+		};
 		function setMenuCheckbox(arr){
-
+			$('.service-data input').each(function(){
+				var text = $(this).parent().text().trim();
+				if(arr.indexOf(text) != -1){
+					$(this).prop('checked',true);
+				}else{
+					$(this).prop('checked',false);
+				}
+			})
 		}
-		
+		function setBlackMenu(arr1,arr2){
+			var arr;
+			//선택된 메뉴가 없으면 ==> 사용자 설정 메뉴가 없으면
+			if(arr1.length == 0){
+				//기본 메뉴를 기준
+				arr = arr2;
+			}else{
+				//선택된 메뉴를 기준
+				arr = arr1;
+			}
+			str = '';
+			for(var i = 0; i<arr.length; i++){
+				str +='<li class="black-menu">'
+						+		'<a href="'+menuLink[arr[i]]+'" class="link">'+arr[i]+'</a>'
+						+	'</li>';
+			}
+			$('.black-menu-box').html(str);
+		}
 		function setEmptyMenu(arr){
 			$('.empty-menu').removeClass('focus');
 			$('.empty-menu').removeClass('selected');
@@ -253,6 +311,12 @@
 					<i class="error-ico"></i>
 					<span>검색어 필터 설정이 필요합니다</span>
 				</a>
+			</div>
+			<div class="filt-search-box">
+				<div class="head-box">
+					<a href="#" class="close-btn"></a>
+				</div>
+				<div class="body-box"></div>
 			</div>
 		</div>
 		<div class="menu-service-box box1">
