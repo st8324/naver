@@ -58,9 +58,21 @@
 			$('.more-btn').click(function(e){
 				e.preventDefault();
 				$('.menu-service-box.box1').toggle();
+				//더보기 버튼 클릭
 				if(!$(this).hasClass('fold')){
 					$(this).text('접기');
-				}else{
+					setEmptyMenu(selectedMenuArr);
+					$('.service-data input').each(function(){
+						var text = $(this).parent().text().trim();
+						if(selectedMenuArr.indexOf(text) != -1){
+							$(this).prop('checked',true);
+						}else{
+							$(this).prop('checked',false);
+						}
+					})
+				}
+				//접기 버튼 클릭
+				else{
 					$(this).text('더보기');
 					foldBtn();
 				}
@@ -74,7 +86,49 @@
 				$('.black-menu-box').hide();
 				$('.empty-box').show();
 			})
+			//메뉴설정에서 메뉴를 선택 선택
+			$('.service-data input').change(function(){
+				var text = $(this).parent().text().trim();
+				/* 선택된 메뉴가 배열에 있으면 배열에서 제거, 없으면 추가 */
+				var index = tmpMenuArr.indexOf(text);
+				if( index == -1){
+					tmpMenuArr.push(text);
+					$('.empty-menu.focus').text(text);
+					$('.empty-menu.focus').addClass('selected');
+					$('.empty-menu.focus').removeClass('focus');
+					$('.empty-menu.selected').last().next().addClass('focus');
+				}else{
+					tmpMenuArr.splice(index,1);
+					setEmptyMenu(tmpMenuArr);
+				}
+			})
 		});
+		//메뉴설정에서 메뉴들을 선택하고 저장했을 때 최종 결정된 메뉴
+		var selectedMenuArr = [];
+		//메뉴설정에서 메뉴들을 선택했을 때 저장된 메뉴
+		var tmpMenuArr = [];
+		const baseMenuArr = ['사전','뉴스','증권','부동산','영화','VIBE','책','웹툰'];
+		
+		function setMenuCheckbox(arr){
+
+		}
+		
+		function setEmptyMenu(arr){
+			$('.empty-menu').removeClass('focus');
+			$('.empty-menu').removeClass('selected');
+			$('.empty-menu').each(function(i){
+				if(i < arr.length){
+					$(this).addClass('selected');
+					$(this).text(arr[i]);
+				}else{
+					$(this).text('');
+					if(i == arr.length){
+						$(this).addClass('focus');
+					}
+				}
+			})
+		}
+
 		function getPage(page,min,max){
 			if(page < min)	return max;
 			if(page > max)	return min;
@@ -187,7 +241,7 @@
 				</li>
 			</ul>
 			<ul class="empty-box">
-				<li class="empty-menu"></li>
+				<li class="empty-menu focus"></li>
 				<li class="empty-menu"></li>
 				<li class="empty-menu"></li>
 				<li class="empty-menu"></li>

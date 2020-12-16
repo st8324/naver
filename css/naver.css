@@ -1616,8 +1616,22 @@ ul,ol{
 	background-color: #f7f9fa;
 	float: left;
 }
+
 .menu .empty-box .empty-menu+.empty-menu{
 	margin-left: 8px;
+}
+.menu .empty-box .empty-menu.focus{
+	border-color: #19ce60;
+	background-color: #fff;
+}
+.menu .empty-box .empty-menu.selected{
+	background-color: #fff;
+	color: #000;
+	border: none;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 30px;
+	width: auto;
 }
 .theme-cont-box .top-box{
 	padding: 22px 0 18px;
