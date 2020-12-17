@@ -138,6 +138,22 @@ ul,ol{
 	padding-right: 67px;
 	overflow: hidden;
 }
+.timesquare-card .timesquare-wrap{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.timesquare-card .timesquare-rolling{
+	width: calc(281px * 6);
+	height: 47px;
+}
+.timesquare-card .timesquare-rolling .card{
+	width: 281px;
+	box-sizing: border-box;
+	padding: 15px 0 14px 16px;
+	display: block;
+	float: left;
+}
 .timesquare-box .btn-box{
 	position: absolute;
 	top: 11px;
@@ -207,7 +223,20 @@ ul,ol{
 	width: 310px;
 	float: left;
 	overflow: hidden;
-	background-color: yellow;
+}
+.rolling-news .news{
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	color: #202020;
+}
+.rolling-news .news:hover{
+	text-decoration: underline;
 }
 .issue-box .link-navernews,
 .issue-box .link-enter,

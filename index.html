@@ -8,6 +8,7 @@
 	<script src="js/jquery.js"></script>
 	<script src="https://kit.fontawesome.com/b1e3c8f87d.js" 
 		crossorigin="anonymous"></script>
+	<script src="js/rolling.js"></script>
 	<script>
 		$(function(){
 			//검색창에서 자동완성버튼을 클릭
@@ -127,6 +128,7 @@
 			$('.filt-search-box .close-btn').click(function(){
 				$('.filt-search-box').hide();
 			})
+			
 		});
 		//메뉴설정에서 메뉴들을 선택하고 저장했을 때 최종 결정된 메뉴
 		var selectedMenuArr = [];
@@ -143,6 +145,8 @@
 			'책'   : '#4',
 			'웹툰' : '#5'
 		};
+		
+		
 		function setMenuCheckbox(arr){
 			$('.service-data input').each(function(){
 				var text = $(this).parent().text().trim();
@@ -586,7 +590,13 @@
 				<div class="issue-box">
 					<div class="left-box">
 						<a href="#" class="link-news">연합뉴스</a>
-						<div class="rolling-news"></div>
+						<div class="rolling-news">
+							<a href="#" class="news">카드사용 늘리면 100만원 소득공제 추가…"내년 3.2% 성장"</a>
+							<a href="#" class="news">화이자 백신, 미국서도 알레르기 반응…한 병원서 2명째</a>
+							<a href="#" class="news">a</a>
+							<a href="#" class="news">b</a>
+							<a href="#" class="news">c</a>
+						</div>
 					</div>
 					<div class="right-box">
 						<a href="#" class="link-navernews">네이버 뉴스</a>
@@ -1198,7 +1208,18 @@
 					</div>
 				</div>
 				<div class="timesquare-box box">
-					<div class="timesquare-card"></div>
+					<div class="timesquare-card">
+						<div class="timesquare-wrap">
+							<div class="timesquare-rolling">
+								<a href="#" class="card">aaaaa</a>
+								<a href="#" class="card">bbbbb</a>
+								<a href="#" class="card">ccccc</a>
+								<a href="#" class="card">ddddd</a>
+								<a href="#" class="card">eeeee</a>
+								<a href="#" class="card">fffff</a>
+							</div>
+						</div>
+					</div>
 					<div class="btn-box">
 						<a href="#" class="prev"></a>
 						<a href="#" class="next"></a>
