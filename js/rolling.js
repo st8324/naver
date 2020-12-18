@@ -9,17 +9,17 @@ function startRollingNews(){
 				$(this).detach().appendTo('.rolling-news').removeAttr('style');
 			})
 		}
-	},1000);
+	},2000);
 }
 function startRollingTimeSquare(){
 	rollingTimesquareInterval = setInterval(function(){
 		if(!$('.timesquare-rolling .card').is(':animated')){
 			$('.timesquare-rolling .card').first()
-			.animate({'margin-left':'-281px'},1500,function(){
+			.animate({'margin-left':'-281px'},1000,function(){
 				$(this).detach().appendTo('.timesquare-rolling').removeAttr('style');
 			})
 		}
-	},2000);
+	},3000);
 }
 $(function(){
 	//화면 로딩 완료후 연합뉴스 롤링
@@ -34,9 +34,27 @@ $(function(){
 		startRollingNews();
 	})
 
-	$('.timesquare-card').hover(function(){
+	$('.timesquare-box').hover(function(){
 		clearInterval(rollingTimesquareInterval)
 	},function(){
 		startRollingTimeSquare();
+	})
+	$('.timesquare-box .prev').click(function(e){
+		e.preventDefault();
+		if(!$('.timesquare-rolling .card').is(':animated')){
+			$('.timesquare-rolling .card').last().detach()
+					.prependTo('.timesquare-rolling').css('margin-left','-281px');
+			$('.timesquare-rolling .card').first()
+					.animate({'margin-left':'0px'},1000);
+		}
+	})
+	$('.timesquare-box .next').click(function(e){
+		e.preventDefault();
+		if(!$('.timesquare-rolling .card').is(':animated')){
+			$('.timesquare-rolling .card').first()
+			.animate({'margin-left':'-281px'},1000,function(){
+				$(this).detach().appendTo('.timesquare-rolling').removeAttr('style');
+			})
+		}
 	})
 })

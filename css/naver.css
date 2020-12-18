@@ -14,7 +14,9 @@ ul,ol{
 	height: 161px;
 }
 
-.header .auto-box .left-box{
+.header .auto-box .left-box,
+.timesquare-card .card.stock .name
+{
 	float: left;
 }
 .header .auto-box .right-box{
@@ -153,6 +155,53 @@ ul,ol{
 	padding: 15px 0 14px 16px;
 	display: block;
 	float: left;
+}
+.timesquare-card .card.stock .stock-title{
+	font-size: 13px;
+	margin-top: 1px;
+	float: left;
+	line-height: 16px;
+	color: #202020;
+	font-weight: bold;
+}
+.timesquare-card .card.stock .stock-box::before{
+	content: '';
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	margin: 3px 7px 2px 6px;
+	background-color: #e4e8eb;
+	vertical-align: top;
+	float: left;
+}
+.timesquare-card .card.stock .stock-box{
+	line-height: 17px;
+	font-size: 12px;
+	color: #505050;
+	float: left;
+	vertical-align: top;
+}
+.timesquare-card .card.stock .stock-box .current{
+	margin-left: 6px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #202020;
+	float: left;
+}
+.timesquare-card .rate.rate-up::before{
+	display: inline-block;
+	content: '';
+	width: 9px;
+	height: 6px;
+	vertical-align: 2px;
+	background-position: -393px -258px;
+	background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+	background-size: 440px 410px;
+	margin-right: 3px;
+}
+.timesquare-card .rate.rate-up{
+	color: #f05a5a;
+	margin-left: 10px;
 }
 .timesquare-box .btn-box{
 	position: absolute;
