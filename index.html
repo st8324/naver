@@ -128,6 +128,53 @@
 			$('.filt-search-box .close-btn').click(function(){
 				$('.filt-search-box').hide();
 			})
+
+
+			//오늘 읽은만한 글 메뉴를 선택하면
+			$('.group-menu-list a').click(function(e){
+				e.preventDefault();
+				$('.group-menu-list a').removeClass('select');
+				$(this).addClass('select');
+				viewGroupMenuBtn();
+			});
+
+			$('.group-menu .next').click(function(e){
+				e.preventDefault();
+				//현재 선택된 메뉴가 메뉴리스트 마지막 메뉴면
+				if($('.group-menu .select').parents('ul').find('li')
+					.last().children().hasClass('select')){
+						menuNum++;
+						var ml = -751 * menuNum;
+						$('.group-menu-list a').removeClass('select');
+						$('.group-menu-list').eq(menuNum).children().
+							first().children().addClass('select');
+						$('.group-menu-wrap').first().animate({'margin-left':ml+'px'},500)
+				}else{
+					$('.group-menu .select').parent().next().find('a')
+						.addClass('select');
+					$('.group-menu .select').first().removeClass('select');
+				}
+				viewGroupMenuBtn();
+			})
+
+			$('.group-menu .prev').click(function(e){
+				e.preventDefault();
+				if($('.group-menu .select').parents('ul').find('li')
+					.first().children().hasClass('select')){
+						menuNum--;
+						var ml = -751 * menuNum;
+						$('.group-menu-list a').removeClass('select');
+						$('.group-menu-list').eq(menuNum).children().
+							last().children().addClass('select');
+						$('.group-menu-wrap').first().animate({'margin-left':ml+'px'},500)
+
+				}else{
+					$('.group-menu .select').parent().prev().find('a')
+						.addClass('select');
+					$('.group-menu .select').last().removeClass('select');
+				}
+				viewGroupMenuBtn();
+			})
 			
 		});
 		//메뉴설정에서 메뉴들을 선택하고 저장했을 때 최종 결정된 메뉴
@@ -146,6 +193,7 @@
 			'웹툰' : '#5'
 		};
 		
+		var menuNum = 0 ;
 		
 		function setMenuCheckbox(arr){
 			$('.service-data input').each(function(){
@@ -201,6 +249,19 @@
 			$('.menu-service-box.box2').hide();
 			$('.empty-box').hide();
 			$('.black-menu-box').show();
+		}
+
+		function viewGroupMenuBtn(){
+			if($('.group-menu-list:first li:first>a').hasClass('select')){
+				$('.group-menu .prev').hide();
+			}else{
+				$('.group-menu .prev').show();
+			}
+			if($('.group-menu-list:last li:last>a').hasClass('select')){
+				$('.group-menu .next').hide();
+			}else{
+				$('.group-menu .next').show();
+			}
 		}
 	</script>
 </head>
@@ -800,32 +861,90 @@
 							</div>
 						</div>
 						<div class="group-menu">
-							<ul>
-								<li>
-									<a href="#" class="enter">엔터</a>
-								</li>
-								<li>
-									<a href="#" class="sports select">스포츠</a>
-								</li>
-								<li>
-									<a href="#" class="car">자동차</a>
-								</li>
-								<li>
-									<a href="#" class="webtoon">웹툰</a>
-								</li>
-								<li>
-									<a href="#" class="finance">경제M</a>
-								</li>
-								<li>
-									<a href="#" class="food">푸드</a>
-								</li>
-								<li>
-									<a href="#" class="game">게임</a>
-								</li>
-								<li>
-									<a href="#" class="movie">영화</a>
-								</li>
-							</ul>
+							<a href="#" class="prev"></a>
+							<a href="#" class="next"></a>
+							<div class="group-menu-view">
+								<div class="group-menu-wrap after">
+									<ul class="after group-menu-list focus">
+										<li>
+											<a href="#" class="enter">엔터</a>
+										</li>
+										<li>
+											<a href="#" class="sports select">스포츠</a>
+										</li>
+										<li>
+											<a href="#" class="car">자동차</a>
+										</li>
+										<li>
+											<a href="#" class="webtoon">웹툰</a>
+										</li>
+										<li>
+											<a href="#" class="finance">경제M</a>
+										</li>
+										<li>
+											<a href="#" class="food">푸드</a>
+										</li>
+										<li>
+											<a href="#" class="game">게임</a>
+										</li>
+										<li>
+											<a href="#" class="movie">영화</a>
+										</li>
+									</ul>
+									<ul class="after group-menu-list focus">
+										<li>
+											<a href="#" class="job">JOB&</a>
+										</li>
+										<li>
+											<a href="#" class="tech">테크</a>
+										</li>
+										<li>
+											<a href="#" class="traval">여행+</a>
+										</li>
+										<li>
+											<a href="#" class="sci">과학</a>
+										</li>
+										<li>
+											<a href="#" class="living">리빙</a>
+										</li>
+										<li>
+											<a href="#" class="health">건강</a>
+										</li>
+										<li>
+											<a href="#" class="business">비즈니스</a>
+										</li>
+										<li>
+											<a href="#" class="marry">연애·결혼</a>
+										</li>
+									</ul>
+									<ul class="after group-menu-list focus">
+										<li>
+											<a href="#" class="job">책문화</a>
+										</li>
+										<li>
+											<a href="#" class="tech">테크</a>
+										</li>
+										<li>
+											<a href="#" class="traval">여행+</a>
+										</li>
+										<li>
+											<a href="#" class="sci">과학</a>
+										</li>
+										<li>
+											<a href="#" class="living">리빙</a>
+										</li>
+										<li>
+											<a href="#" class="health">건강</a>
+										</li>
+										<li>
+											<a href="#" class="business">비즈니스</a>
+										</li>
+										<li>
+											<a href="#" class="marry">연애·결혼</a>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="theme-cont"></div>

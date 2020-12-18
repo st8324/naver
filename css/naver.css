@@ -944,8 +944,45 @@ ul,ol{
 .left .themecast-box .group-menu{
 	width: 100%;
 	height: 49px;
-	overflow: hidden;
 	border: 1px solid #dae1e6;
+	position: relative;
+}
+.left .group-menu .group-menu-view{
+	width: 750px;
+	height: 49px;
+	overflow: hidden;
+}
+.left .group-menu .group-menu-wrap{
+	width: calc(750px * 3);
+	height: 49px;
+}
+
+.left .group-menu .next,
+.left .group-menu .prev{
+	z-index: 1;
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 6px;
+	left: -23px;
+	background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main_1f05c0.png);
+	background-size: 440px 410px;
+	background-position: -86px -342px;
+}
+.left .group-menu .next{
+	left: auto;
+	right: -18px;
+	background-position: -128px -342px;
+}
+.left .group-menu .next:hover{
+	background-position: -170px -342px;
+}
+.left .group-menu .prev:hover{
+	background-position: -44px -342px;
+}
+.left .group-menu .group-menu-list{
+	float: left;
 }
 .left .themecast-box .group-menu li{
 	float: left;
@@ -975,6 +1012,14 @@ ul,ol{
 .left .themecast-box .food:hover		{			color: #e77c43;		}
 .left .themecast-box .game:hover		{			color: #5bb8e1;		}
 .left .themecast-box .movie:hover		{			color: #1a2f63;		}
+.left .themecast-box .job:hover			{			color: #e65da0;		}
+.left .themecast-box .tech:hover		{			color: #0147b5;		}
+.left .themecast-box .traval:hover	{			color: #4a94e1;		}
+.left .themecast-box .sci:hover			{			color: #66c971;		}
+.left .themecast-box .living:hover	{			color: #35ae5e;		}
+.left .themecast-box .health:hover	{			color: #e77c43;		}
+.left .themecast-box .business:hover{			color: #5bb8e1;		}
+.left .themecast-box .marry:hover		{			color: #1a2f63;		}
 .left .themecast-box .group-menu li>a.select{
 	position: relative;
 	margin: 0 -1px;
@@ -989,6 +1034,14 @@ ul,ol{
 .left .themecast-box .food.select		{			background-color: #e77c43;		}
 .left .themecast-box .game.select		{			background-color: #5bb8e1;		}
 .left .themecast-box .movie.select	{			background-color: #1a2f63;		}
+.left .themecast-box .job.select		{			background-color: #e65da0;		}
+.left .themecast-box .tech.select		{			background-color: #0147b5;		}
+.left .themecast-box .traval.select	{			background-color: #4a94e1;		}
+.left .themecast-box .sci.select		{			background-color: #66c971;		}
+.left .themecast-box .living.select	{			background-color: #35ae5e;		}
+.left .themecast-box .health.select	{			background-color: #e77c43;		}
+.left .themecast-box .business.select{		background-color: #5bb8e1;		}
+.left .themecast-box .marry.select	{			background-color: #1a2f63;		}
 .footer{
 	background-color: #fafbfc;
 	border-top: 1px solid #e4e8eb;
