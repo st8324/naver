@@ -136,8 +136,13 @@
 				$('.group-menu-list a').removeClass('select');
 				$(this).addClass('select');
 				viewGroupMenuBtn();
+				var target = $(this).attr('data-target');
+				if(target != 'undefined'){
+					$('.theme-cont-box').hide();
+					$(target).show();
+				}
 			});
-
+			//오늘 읽은만한 글 메뉴에서 다음 버튼
 			$('.group-menu .next').click(function(e){
 				e.preventDefault();
 				//현재 선택된 메뉴가 메뉴리스트 마지막 메뉴면
@@ -154,9 +159,9 @@
 						.addClass('select');
 					$('.group-menu .select').first().removeClass('select');
 				}
-				viewGroupMenuBtn();
+				$('.group-menu .select').click();
 			})
-
+			//오늘 읽은만한 글 메뉴에서 이전 버튼
 			$('.group-menu .prev').click(function(e){
 				e.preventDefault();
 				if($('.group-menu .select').parents('ul').find('li')
@@ -173,7 +178,7 @@
 						.addClass('select');
 					$('.group-menu .select').last().removeClass('select');
 				}
-				viewGroupMenuBtn();
+				$('.group-menu .select').click();
 			})
 			
 		});
@@ -867,33 +872,33 @@
 								<div class="group-menu-wrap after">
 									<ul class="after group-menu-list focus">
 										<li>
-											<a href="#" class="enter">엔터</a>
+											<a href="#" class="enter" data-target="#enter">엔터</a>
 										</li>
 										<li>
-											<a href="#" class="sports select">스포츠</a>
+											<a href="#" class="sports select" data-target="#sports">스포츠</a>
 										</li>
 										<li>
-											<a href="#" class="car">자동차</a>
+											<a href="#" class="car" data-target="#car">자동차</a>
 										</li>
 										<li>
-											<a href="#" class="webtoon">웹툰</a>
+											<a href="#" class="webtoon" data-target="#webtoon">웹툰</a>
 										</li>
 										<li>
-											<a href="#" class="finance">경제M</a>
+											<a href="#" class="finance" data-target="#finance">경제M</a>
 										</li>
 										<li>
-											<a href="#" class="food">푸드</a>
+											<a href="#" class="food" data-target="#food">푸드</a>
 										</li>
 										<li>
-											<a href="#" class="game">게임</a>
+											<a href="#" class="game" data-target="#game">게임</a>
 										</li>
 										<li>
-											<a href="#" class="movie">영화</a>
+											<a href="#" class="movie" data-target="#movie">영화</a>
 										</li>
 									</ul>
 									<ul class="after group-menu-list focus">
 										<li>
-											<a href="#" class="job">JOB&</a>
+											<a href="#" class="job" data-target="#job">JOB&</a>
 										</li>
 										<li>
 											<a href="#" class="tech">테크</a>
@@ -949,7 +954,7 @@
 					</div>
 					<div class="theme-cont"></div>
 				</div>
-				<div class="theme-cont-box">
+				<div class="theme-cont-box" id="sports">
 					<div class="top-box after">
 						<div class="left-box">
 							<a href="#" class="thumb-box">
@@ -1306,6 +1311,15 @@
 						</button>
 					</div>
 				</div>
+				<div class="theme-cont-box" id="enter">엔터</div>
+				<div class="theme-cont-box" id="car">자동차</div>
+				<div class="theme-cont-box" id="webtoon">웹툰</div>
+				<div class="theme-cont-box" id="finance">경제M</div>
+				<div class="theme-cont-box" id="food">푸드</div>
+				<div class="theme-cont-box" id="game">게임</div>
+				<div class="theme-cont-box" id="movie">영화</div>
+				<div class="theme-cont-box" id="job">JOB&</div>
+
 			</div>
 			<div class="right">
 				<div class="login-box box">
